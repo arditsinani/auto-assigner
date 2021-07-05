@@ -1,0 +1,33 @@
+{
+  "name": "auto-assigner",
+  "version": "0.0.1",
+  "description": "auto assigner",
+  "main": "build/index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "local": "nodemon",
+    "develop": "export NODE_CONFIG_DIR='config/local' && npm run build && node --inspect=0.0.0.0:9229 build/index.js",
+    "prod": "export NODE_CONFIG_DIR='config/prod' && npm run build && node build/main.js",
+    "tsc": "tsc",
+    "build": "./node_modules/typescript/bin/tsc -p tsconfig.release.json",
+    "build:watch": "./node_modules/typescript/bin/tsc -w -p tsconfig.release.json",
+    "user:init": "export NODE_CONFIG_DIR='config/local' && npm run build && node build/scripts/PopulateAgents.js"
+  },
+  "author": "Ardit Sinani",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/boom": "^9.1.1",
+    "@hapi/hapi": "^20.1.0",
+    "@types/amqplib": "^0.8.0",
+    "@types/config": "0.0.38",
+    "@types/hapi__hapi": "^20.0.5",
+    "@types/node": "^14.14.25",
+    "amqplib": "^0.8.0",
+    "config": "^3.3.3",
+    "joi": "^17.4.0",
+    "mongoose": "^5.11.15",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}

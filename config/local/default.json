@@ -1,0 +1,17 @@
+{
+    "server": {
+        "port": 8000,
+        "host": "0.0.0.0"
+    },
+    "mongo": {
+        "uri": "mongodb://mongo:27017/assigner"
+    },
+    "rabbitmq": {
+        "uri": "amqp://rabbitmq:5672",
+        "queues": {
+            "issue": {
+                "name": "issue"
+            }
+        }
+    }
+}
